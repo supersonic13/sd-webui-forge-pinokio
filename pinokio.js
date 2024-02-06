@@ -1,8 +1,8 @@
 const path = require('path')
 module.exports = {
   version: 1,
-  title: "Stable Diffusion web UI",
-  description: "One-click launcher for Stable Diffusion web UI (AUTOMATIC1111/stable-diffusion-webui)",
+  title: "Forge Stable Diffusion web UI",
+  description: "One-click launcher for Stable Diffusion web UI Forge (lllyasviel/stable-diffusion-webui-forge)",
   icon: "icon.png",
   menu: async (kernel) => {
     let installed = await kernel.exists(__dirname, "app", "venv")
