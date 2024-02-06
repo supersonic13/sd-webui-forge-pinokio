@@ -1,9 +1,9 @@
 module.exports = async (kernel) => {
   let repo
   if (kernel.gpu === "amd" && kernel.platform === "win32") {
-    repo = "https://github.com/lshqqytiger/stable-diffusion-webui-directml.git"
+    repo = "https://github.com/lllyasviel/stable-diffusion-webui-forge"
   } else {
-    repo = "https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+    repo = "https://github.com/lllyasviel/stable-diffusion-webui-forge"
   }
   let o = {
     "pinokiod": ">=0.1.49",
