@@ -1,24 +1,24 @@
 const path = require('path')
 module.exports = {
   version: 1,
-  title: "Forge Stable Diffusion web UI",
+  title: "UPDATE TEST Forge Stable Diffusion web UI",
   description: "One-click launcher for Stable Diffusion web UI Forge (lllyasviel/stable-diffusion-webui-forge)",
   icon: "icon.png",
   menu: async (kernel) => {
     let installed = await kernel.exists(__dirname, "app", "venv")
-    let installing = kernel.running(__dirname, "install.js")
+    let installing = kernel.running(__dirname, "install.json")
     let configure = {
       icon: "fa-solid fa-gear",
       text: "Configure",
       href: (kernel.platform === 'win32' ? "app/webui-user.bat?mode=source#L6" : "app/webui-user.sh?mode=source#L13")
     }
     if (installing) {
-      return [{ icon: "fa-solid fa-plug", text: "Installing", href: "install.js" }]
+      return [{ icon: "fa-solid fa-plug", text: "Installing", href: "install.json" }]
     } else if (installed) {
-      let running = kernel.running(__dirname, "start.js")
+      let running = kernel.running(__dirname, "start.json")
       let arr
       if (running) {
-        let local = kernel.memory.local[path.resolve(__dirname, "start.js")]
+        let local = kernel.memory.local[path.resolve(__dirname, "start.json")]
         if (local.url) {
           arr = [{
             icon: "fa-solid fa-rocket",
@@ -59,7 +59,7 @@ module.exports = {
       }, {
         icon: "fa-solid fa-rotate", text: "Update", href: "update.json"
       }, {
-        icon: "fa-solid fa-plug", text: "Reinstall", href: "install.js"
+        icon: "fa-solid fa-plug", text: "Reinstall", href: "install.json"
       }, {
         icon: "fa-solid fa-broom", text: "Factory Reset", href: "reset.json"
       }])
@@ -68,7 +68,7 @@ module.exports = {
       return [{
         icon: "fa-solid fa-plug",
         text: "Install",
-        href: "install.js"
+        href: "install.json"
       }, configure, {
         icon: "fa-solid fa-rotate",
         text: "Update",
