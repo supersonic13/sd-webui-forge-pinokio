@@ -5,7 +5,7 @@ module.exports = {
   description: "One-click launcher for Stable Diffusion web UI Forge (lllyasviel/stable-diffusion-webui-forge)",
   icon: "icon.png",
   menu: async (kernel) => {
-    let installed = await kernel.exists(__dirname, "app", "venv")
+    let installed = await kernel.exists(__dirname, "app", "env")
     let installing = await kernel.running(__dirname, "install.json")
     let running = await kernel.running(__dirname, "start.js")
     let configure = {
