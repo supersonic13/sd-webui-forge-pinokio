@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   version: 1,
-  title: "UPDATE TEST Forge Stable Diffusion web UI",
+  title: "Forge Stable Diffusion web UI",
   description: "One-click launcher for Stable Diffusion web UI Forge (lllyasviel/stable-diffusion-webui-forge)",
   icon: "icon.png",
   menu: async (kernel) => {
