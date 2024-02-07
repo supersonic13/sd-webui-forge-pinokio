@@ -34,7 +34,7 @@
         "configs": "app/models/configs",
         "controlnet": "app/models/ControlNet",
         "embeddings": "app/models/embeddings",
-        "loras": "app/models/loras",
+        "loras": ["app/models/loras","app/models/Lora"],
         "upscale_models": "app/models/upscale_models",
         "vae": "app/models/VAE"
       },

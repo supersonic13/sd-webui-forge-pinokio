@@ -6,7 +6,8 @@ module.exports = {
   icon: "icon.png",
   menu: async (kernel) => {
     let installed = await kernel.exists(__dirname, "app", "venv")
-    let installing = kernel.running(__dirname, "install.json")
+    let installing = await kernel.running(__dirname, "install.json")
+    let running = await kernel.running(__dirname, "start.js")
     let configure = {
       icon: "fa-solid fa-gear",
       text: "Configure",
@@ -15,10 +16,9 @@ module.exports = {
     if (installing) {
       return [{ icon: "fa-solid fa-plug", text: "Installing", href: "install.json" }]
     } else if (installed) {
-      let running = kernel.running(__dirname, "start.json")
       let arr
       if (running) {
-        let local = kernel.memory.local[path.resolve(__dirname, "start.json")]
+        let local = kernel.memory.local[path.resolve(__dirname, "start.js")]
         if (local.url) {
           arr = [{
             icon: "fa-solid fa-rocket",
